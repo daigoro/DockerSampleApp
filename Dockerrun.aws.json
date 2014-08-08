@@ -1,0 +1,12 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Authentication": {
+        "Bucket": "sampleapp-bucket",
+        "Key": "docker/mydockercfg"
+    },
+    "Image" : {
+        "Name" : "saisa6153/sampleapp:latest",
+        "Update": "true"
+    },
+    "Ports" : [{ "ContainerPort": "80" }]
+}

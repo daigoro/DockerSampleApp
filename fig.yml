@@ -1,0 +1,19 @@
+app:
+  image: saisa6153/sampleapp:latest
+  links:
+    - resource
+  ports:
+    - "80:80"
+  environment:
+    RDS_DB_NAME:  "sampleapp"
+    RDS_USERNAME: "root"
+    RDS_PASSWORD: "testtest"
+    RDS_HOSTNAME: RESOURCE_PORT_3306_TCP_ADDR
+    RDS_PORT:     "3306"
+
+resource:
+  image: saisa6153/resource:latest
+  expose:
+    - "8000"
+    - "9324"
+    - "3306"

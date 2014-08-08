@@ -1,0 +1,30 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: cloudroom_dev
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: cloudroom_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: <%= ENV['RDS_DB_NAME'] %>
+  pool: 5
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
